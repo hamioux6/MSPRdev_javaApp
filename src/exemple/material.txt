@@ -1,0 +1,9 @@
+mousqueton Mousqueton
+gants Gants d'intervention
+brassard Brassard de sécurité
+menottes Porte-menottes
+lacrymo Bombe Lacrymogènes
+taser Taser
+lampe Lampe
+talky Talkies Walkies
+kit Kit Oreillette
