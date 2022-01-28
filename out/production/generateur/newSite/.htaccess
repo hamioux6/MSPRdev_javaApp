@@ -1,5 +1,6 @@
+AuthName "Accès"
+AuthUserFile C:\wamp64\www\MSPR\.htpasswd
 AuthType Basic
-AuthName "fichiers réservés"
-AuthUserFile /.htpasswd
-AuthPGAuthoritative Off
-require user rDurand eLilili 
+require valid-user
+ErrorDocument 401 /error_pages/401.html
+AddHandler server-parsed .html
