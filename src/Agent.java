@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Locale;
 
-public class Employe {
+public class Agent {
     String nom;
     String prenom;
     String profession;
@@ -10,7 +10,7 @@ public class Employe {
     String IDimage;
     List<String> materiaux;
 
-    public Employe(String nom, String prenom, String profession, String mdp, List<String> materiaux) {
+    public Agent(String nom, String prenom, String profession, String mdp, List<String> materiaux) {
         this.profession = profession;
         this.mdp = mdp;
         this.materiaux = materiaux;
@@ -21,6 +21,6 @@ public class Employe {
         this.nom = maj + nom.substring(1).toLowerCase();
 
         IDimage = this.nom + ".png";
-        unique = this.prenom.substring(0,1).toLowerCase() + this.nom .substring(1);
+        unique = this.prenom.substring(0,1).toLowerCase() + this.nom ;
     }
 }

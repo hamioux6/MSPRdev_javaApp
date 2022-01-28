@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "fichiers réservés"
+AuthUserFile /.htpasswd
+AuthPGAuthoritative Off
+require user rDurand eLilili 

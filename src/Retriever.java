@@ -11,7 +11,7 @@ public class Retriever {
     HashMap<String, String> materialsMap;
 
     public Retriever(){
-        materialsMap = new HashMap<String, String>();
+        materialsMap = new HashMap<>();
     }
 
     public void setMaterials() throws IOException {
@@ -24,18 +24,18 @@ public class Retriever {
         }
     }
 
-    public List<Employe> tratAllEmployees() throws IOException {
+    public List<Agent> tratAllagentes() throws IOException {
         String content = Files.readString(Path.of(PATH + "staff.txt"));
         String[] names = content.split("\r\n");
 
-        List<Employe> employes = new ArrayList<Employe>();
+        List<Agent> agents = new ArrayList<Agent>();
         for (String name : names){
-            employes.add(createEmploye(name));
+            agents.add(createagent(name));
         }
-        return employes;
+        return agents;
     }
 
-    public Employe createEmploye(String login) throws IOException {
+    public Agent createagent(String login) throws IOException {
         String content = Files.readString(Path.of(PATH + login + ".txt"));
         String[] names = content.split("\r\n");
 
@@ -46,7 +46,7 @@ public class Retriever {
             }
         }
 
-        return new Employe(
+        return new Agent(
                 names[0],
                 names[1],
                 names[2],
@@ -55,9 +55,9 @@ public class Retriever {
                 );
     }
 
-    public void uploadIDimage(Employe employe) throws IOException {
-        Path originalPath = Path.of(PATH + employe.IDimage);
-        Path copied = Paths.get("src/newSite/employes/" + employe.unique + "/" + employe.IDimage);
+    public void uploadIDimage(Agent agent) throws IOException {
+        Path originalPath = Path.of(PATH + agent.IDimage);
+        Path copied = Paths.get("src/newSite/agents/" + agent.unique + "/" + agent.IDimage);
         Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
     }
 
