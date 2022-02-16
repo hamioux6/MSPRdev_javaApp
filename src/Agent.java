@@ -20,7 +20,7 @@ public class Agent {
         maj = nom.substring(0,1).toUpperCase(Locale.ROOT);
         this.nom = maj + nom.substring(1).toLowerCase();
 
-        IDimage = this.nom + ".png";
         unique = this.prenom.substring(0,1).toLowerCase() + this.nom ;
+        IDimage = this.unique + ".png";
     }
 }

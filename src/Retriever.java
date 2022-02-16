@@ -26,18 +26,20 @@ public class Retriever {
 
     public List<Agent> tratAllagentes() throws IOException {
         String content = Files.readString(Path.of(PATH + "staff.txt"));
-        String[] names = content.split("\r\n");
+        content = content.replace("\r", "");
+        String[] logins = content.split("\n");
 
-        List<Agent> agents = new ArrayList<Agent>();
-        for (String name : names){
-            agents.add(createagent(name));
+        List<Agent> agents = new ArrayList<>();
+        for (String login : logins){
+            agents.add(createagent(login));
         }
         return agents;
     }
 
     public Agent createagent(String login) throws IOException {
         String content = Files.readString(Path.of(PATH + login + ".txt"));
-        String[] names = content.split("\r\n");
+        content = content.replace("\r", "");
+        String[] names = content.split("\n");
 
         List<String> materiaux = new ArrayList<>();
         for (String material : materialsMap.keySet()){
